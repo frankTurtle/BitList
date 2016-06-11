@@ -10,6 +10,9 @@ import UIKit
 
 class AddToDoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addToDoTextField: UITextField!
+    @IBOutlet weak var favoriteButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +24,6 @@ class AddToDoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    @IBAction func favoriteButtonPressed(sender: UIButton) {
+    }
 }

@@ -32,6 +32,9 @@
                                                     <rect key="frame" x="276" y="7" width="30" height="30"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.39212065899999998" green="0.19504563750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonPressed:" destination="4d2-X7-F1b" eventType="touchUpInside" id="grM-vQ-57u"/>
+                                                    </connections>
                                                 </button>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qeg-WQ-ewB">
                                                     <rect key="frame" x="8" y="7" width="260" height="30"/>
@@ -43,6 +46,10 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="addToDoTextField" destination="qeg-WQ-ewB" id="riP-Hc-jhu"/>
+                                            <outlet property="favoriteButton" destination="Tiu-Gk-bgC" id="cLO-oe-gDG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="r9r-hy-eC7" customClass="ToDoTableViewCell" customModule="BitList" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="136" width="330" height="44"/>
@@ -55,11 +62,17 @@
                                                     <rect key="frame" x="8" y="8" width="30" height="30"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="1" green="0.2816818425" blue="0.31545007879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="completeButtonPressed:" destination="r9r-hy-eC7" eventType="touchUpInside" id="gWs-Z6-f5D"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="voh-NV-HUd">
                                                     <rect key="frame" x="276" y="7" width="30" height="30"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.39212065899999998" green="0.19504563750000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <connections>
+                                                        <action selector="favoriteButtonPressed:" destination="r9r-hy-eC7" eventType="touchUpInside" id="Vu5-Lh-f3f"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef2-Pb-9q2">
                                                     <rect key="frame" x="46" y="2" width="222" height="21"/>
@@ -79,6 +92,12 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
+                                        <connections>
+                                            <outlet property="completeButton" destination="whl-oq-i6V" id="GBo-MS-12K"/>
+                                            <outlet property="dateLabel" destination="hgw-C3-dsx" id="PtX-yZ-CIE"/>
+                                            <outlet property="favoriteButton" destination="voh-NV-HUd" id="zGi-Lg-ZwT"/>
+                                            <outlet property="titleLabel" destination="ef2-Pb-9q2" id="CJO-wM-gjT"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -87,8 +106,15 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DfA-g7-igZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="rbJ-8k-B6d"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="rbJ-8k-B6d">
+                            <connections>
+                                <action selector="editBarButtonItemPressed:" destination="BYZ-38-t0r" id="7cO-j9-tOa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="LsH-MN-LeO" id="e0r-Jr-ONb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

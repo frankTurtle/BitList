@@ -10,6 +10,8 @@ import UIKit
 
 class ToDoViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,4 +23,6 @@ class ToDoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func editBarButtonItemPressed(sender: UIBarButtonItem) {
+    }
 }
