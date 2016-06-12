@@ -30,4 +30,20 @@ class ToDoTableViewCell: UITableViewCell {
     
     @IBAction func favoriteButtonPressed(sender: UIButton) {
     }
+    
+    // Method to hide elements if editing
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated) //....... call superclass implementation
+        
+        if( editing ){
+            dateLabel.hidden = true
+            completeButton.hidden = true
+            favoriteButton.hidden = true
+        }
+        else{
+            dateLabel.hidden = false
+            completeButton.hidden = false
+            favoriteButton.hidden = false
+        }
+    }
 }
