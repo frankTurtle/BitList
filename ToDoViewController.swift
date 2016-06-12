@@ -159,6 +159,15 @@ extension ToDoViewController: UITableViewDataSource {
             tableView.endUpdates()
         }
     }
+    
+    // method to give a header for the section
+    // only shows up if the something is in the second section
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if( section == 2  && baseArray[1].count > 0 ){
+            return "\(baseArray[1].count) Completed items"
+        }
+        return ""
+    }
 }
 
 // extension to conform to the ToDoTVCellDelegate and implement its functions
