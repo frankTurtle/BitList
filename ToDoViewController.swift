@@ -164,7 +164,18 @@ extension ToDoViewController: UITableViewDataSource {
 // extension to conform to the ToDoTVCellDelegate and implement its functions
 extension ToDoViewController: ToDoTableViewCellDelegate {
     func completeToDo(indexPath: NSIndexPath) {
-        print( "complete todo" )
+        var selectedToDo = baseArray[indexPath.section - 1][indexPath.row] //... get the todo from the array
+        selectedToDo.completed = !selectedToDo.completed //..................... flip the state
+        
+        if( indexPath.section == 1 ){
+            baseArray[1].append(selectedToDo)
+        }
+        else {
+            baseArray[0].append(selectedToDo)
+        }
+        
+        baseArray[indexPath.section-1].removeAtIndex(indexPath.row) //. remove it
+        tableView.reloadData() //...................................... refresh the view
     }
     
     func favoriteToDo(indexPath: NSIndexPath) {
