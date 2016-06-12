@@ -110,6 +110,9 @@ extension ToDoViewController: UITableViewDataSource {
             
             cell.backgroundColor = UIColor.lightGrayColor() //.. gives us some contrast for the cell
             
+            cell.indexPath = indexPath //....................... store the index path for each cell
+            cell.delegate = self //............................. makes us the delegate
+            
             return cell
         }
         else{
@@ -155,5 +158,16 @@ extension ToDoViewController: UITableViewDataSource {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
             tableView.endUpdates()
         }
+    }
+}
+
+// extension to conform to the ToDoTVCellDelegate and implement its functions
+extension ToDoViewController: ToDoTableViewCellDelegate {
+    func completeToDo(indexPath: NSIndexPath) {
+        print( "complete todo" )
+    }
+    
+    func favoriteToDo(indexPath: NSIndexPath) {
+        print( "favorite" )
     }
 }

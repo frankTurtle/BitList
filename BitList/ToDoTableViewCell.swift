@@ -8,12 +8,22 @@
 
 import UIKit
 
+protocol ToDoTableViewCellDelegate {
+    func completeToDo( indexPath: NSIndexPath )
+    func favoriteToDo( indexPath: NSIndexPath )
+}
+
 class ToDoTableViewCell: UITableViewCell {
 
     @IBOutlet weak var completeButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    var indexPath: NSIndexPath!
+    
+    var delegate: ToDoTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -26,9 +36,11 @@ class ToDoTableViewCell: UITableViewCell {
     }
 
     @IBAction func completeButtonPressed(sender: UIButton) {
+        delegate?.completeToDo( indexPath )
     }
     
     @IBAction func favoriteButtonPressed(sender: UIButton) {
+        delegate?.favoriteToDo( indexPath )
     }
     
     // Method to hide elements if editing
