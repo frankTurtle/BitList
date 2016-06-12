@@ -100,5 +100,15 @@ extension ToDoViewController: UITableViewDataSource {
         return 3
     }
 
+    // Method to check if you can move the row as long as its not the first section
+    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return ( indexPath.section == 1 ) ? true : false
+    }
     
+    // Method to allow us to move the rows
+    func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
+        let currentToDo = baseArray[0][sourceIndexPath.row] //................... get the current to do we want to move
+        baseArray[0].removeAtIndex( sourceIndexPath.row ) //..................... remove from the index the one we want to move
+        baseArray[0].insert(currentToDo, atIndex: destinationIndexPath.row) //... insert it into the new spot
+    }
 }
