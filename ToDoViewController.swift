@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ToDoViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,7 +35,10 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
     @IBAction func editBarButtonItemPressed(sender: UIBarButtonItem) {
     }
-    
+}
+
+// Practicing extending the class we wrote to use implement the data source
+extension ToDoViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // FIRST SECTION
         if( indexPath.section == 0 ){
@@ -88,5 +91,6 @@ class ToDoViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 3
     }
+
     
 }
