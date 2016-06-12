@@ -62,8 +62,8 @@
 		981408981D0CA81C00040BFB /* BitList */ = {
 			isa = PBXGroup;
 			children = (
-				981408B51D0CBDCC00040BFB /* Model */,
 				981408991D0CA81C00040BFB /* AppDelegate.swift */,
+				981408B51D0CBDCC00040BFB /* Model */,
 				981408B01D0CAA8D00040BFB /* ToDoVC */,
 				9814089D1D0CA81C00040BFB /* Main.storyboard */,
 				981408A31D0CA81C00040BFB /* Assets.xcassets */,
@@ -315,6 +315,7 @@
 				981408AD1D0CA81C00040BFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
