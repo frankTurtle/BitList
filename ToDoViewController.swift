@@ -87,6 +87,7 @@ extension ToDoViewController: UITableViewDataSource {
         if( indexPath.section == 0 ){
             let cell: AddToDoTableViewCell = tableView.dequeueReusableCellWithIdentifier("AddToDoCell") as! AddToDoTableViewCell //.. setup the cell with cell identifier and "cast" it as an AddToDoTableViewCell
             cell.backgroundColor = UIColor.yellowColor() //... set the background color
+            cell.favoriteButton.backgroundColor = UIColor.orangeColor() //.. reset the color
             
             return cell
         }
