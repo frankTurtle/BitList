@@ -26,6 +26,10 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
         let toDo3 = ToDoModel(title: "Gym", favorited: false, completed: false, dueDate: nil, reminder: nil, repeated: nil)
         
         baseArray = [[toDo1, toDo2, toDo3], []] //..... add them to the first array as they're not completed yet
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil) //.. tells the notification center when the UIKeyboardWillShowNotification message comes call keyboardWillShow method which we define
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil) //.. essentially the same, but when the keyboard will hide -- we also pass in a parameter to the keyboardWillHide method we write
     }
 
     override func didReceiveMemoryWarning() {
