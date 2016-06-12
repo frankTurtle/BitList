@@ -111,4 +111,13 @@ extension ToDoViewController: UITableViewDataSource {
         baseArray[0].removeAtIndex( sourceIndexPath.row ) //..................... remove from the index the one we want to move
         baseArray[0].insert(currentToDo, atIndex: destinationIndexPath.row) //... insert it into the new spot
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if( editingStyle == UITableViewCellEditingStyle.Delete ){
+            tableView.beginUpdates()
+            baseArray[indexPath.section - 1].removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+            tableView.endUpdates()
+        }
+    }
 }
