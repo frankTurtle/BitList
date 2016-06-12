@@ -51,7 +51,13 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
             let addToDoTableViewCell = tableView.cellForRowAtIndexPath( indexPathOfAddToDoCell ) as! AddToDoTableViewCell
             
             if addToDoTableViewCell.addToDoTextField.text != ""{
+                let newToDo = ToDoModel( title: addToDoTableViewCell.addToDoTextField.text!, favorited: addToDoTableViewCell.favorited, completed: false, dueDate: nil, reminder: nil, repeated: nil )
                 
+                baseArray[0].append(newToDo)
+                tableView.reloadData()
+                
+                addToDoTableViewCell.addToDoTextField.text = ""
+                addToDoTableViewCell.addToDoTextField.resignFirstResponder()
             }
             else {
                 let alert = UIAlertController( title: "Invalid", message: "Enter a title", preferredStyle: UIAlertControllerStyle.Alert )
@@ -63,7 +69,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
         }
     }
     
-    //: MARK - Keyboard Notification
+    // MARK: - Keyboard Notification
     func keyboardWillShow( notification: NSNotification ) {
         navigationItem.rightBarButtonItem?.title = "Done" //.. rename the button
     }
@@ -73,6 +79,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
     }
 }
 
+// MARK: - Extension of our VC
 // Practicing extending the class we wrote to use implement the data source
 extension ToDoViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
