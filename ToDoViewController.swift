@@ -27,7 +27,7 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
         
         baseArray = [[toDo1, toDo2, toDo3], []] //..... add them to the first array as they're not completed yet
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil) //.. tells the notification center when the UIKeyboardWillShowNotification message comes call keyboardWillShow method which we define
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil) //.. tells the notification center when the UIKeyboardWillShowNotification message comes call keyboardWillShow method which we define
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil) //.. essentially the same, but when the keyboard will hide -- we also pass in a parameter to the keyboardWillHide method we write
     }
@@ -46,6 +46,30 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
                 tableView.setEditing(true, animated: true)
             }
         }
+        else if( sender.title == "Done" ){
+            let indexPathOfAddToDoCell = NSIndexPath( forRow: 0, inSection: 0 )
+            let addToDoTableViewCell = tableView.cellForRowAtIndexPath( indexPathOfAddToDoCell ) as! AddToDoTableViewCell
+            
+            if addToDoTableViewCell.addToDoTextField.text != ""{
+                
+            }
+            else {
+                let alert = UIAlertController( title: "Invalid", message: "Enter a title", preferredStyle: UIAlertControllerStyle.Alert )
+                
+                alert.addAction( UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil) )
+                
+                presentViewController( alert, animated: true, completion: nil )
+            }
+        }
+    }
+    
+    //: MARK - Keyboard Notification
+    func keyboardWillShow( notification: NSNotification ) {
+        navigationItem.rightBarButtonItem?.title = "Done" //.. rename the button
+    }
+    
+    func keyboardWillHide( notificaton: NSNotification ) {
+        navigationItem.rightBarButtonItem?.title = "Edit"
     }
 }
 
