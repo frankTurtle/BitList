@@ -179,6 +179,11 @@ extension ToDoViewController: ToDoTableViewCellDelegate {
     }
     
     func favoriteToDo(indexPath: NSIndexPath) {
-        print( "favorite" )
+        var selectedToDo = baseArray[indexPath.section - 1][indexPath.row]
+        selectedToDo.favorited = !selectedToDo.favorited
+        
+        baseArray[indexPath.section - 1][indexPath.row] = selectedToDo
+        
+        tableView.reloadData()
     }
 }
