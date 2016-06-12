@@ -106,7 +106,7 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="DfA-g7-igZ">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="rbJ-8k-B6d">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="rbJ-8k-B6d">
                             <connections>
                                 <action selector="editBarButtonItemPressed:" destination="BYZ-38-t0r" id="7cO-j9-tOa"/>
                             </connections>
