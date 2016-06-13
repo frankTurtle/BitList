@@ -84,6 +84,13 @@ extension ToDoViewController: UITableViewDelegate {
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return ( section == 2 && baseArray[1].count > 0 ) ? 25 : 0
     }
+    
+    // Method to setup the cell before its displayed
+    // ( think of it as viewWillLoad
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        cell.separatorInset = UIEdgeInsetsZero //... set the cell inset to be zero
+        cell.layoutMargins = UIEdgeInsetsZero //.... needed to adjust the inset
+    }
 }
 
 // MARK: - Extension of our VC for DataSource
