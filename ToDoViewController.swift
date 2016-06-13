@@ -86,9 +86,14 @@ extension ToDoViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - Extension of our VC
+// MARK: - Extension of our VC for DataSource
 // Practicing extending the class we wrote to use implement the data source
 extension ToDoViewController: UITableViewDataSource {
+    // Method to not allow editing fo the first section
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return ( indexPath.section == 0 ) ? false : true
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // FIRST SECTION
         if( indexPath.section == 0 ){
