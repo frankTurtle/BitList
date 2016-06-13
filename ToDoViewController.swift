@@ -19,6 +19,8 @@ class ToDoViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        tableView.tableFooterView = UIView(frame: CGRectZero) //.. setup the footer value - default value is nil
     
         // create some toDo's
         let toDo1 = ToDoModel(title: "Study", favorited: false, completed: false, dueDate: NSDate(), reminder: nil, repeated: nil)
@@ -81,6 +83,17 @@ class ToDoViewController: UIViewController {
 
 // MARK: - Extension of our VC for Delegate
 extension ToDoViewController: UITableViewDelegate {
+    // Method to give a height for the footer
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10.0
+    }
+    
+    // Method to give a bit of a buffer
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    // Method to adjust the height based on section
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return ( section == 2 && baseArray[1].count > 0 ) ? 25 : 0
     }
