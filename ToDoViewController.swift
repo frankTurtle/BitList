@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoViewController: UIViewController, UITableViewDelegate {
+class ToDoViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -76,6 +76,13 @@ class ToDoViewController: UIViewController, UITableViewDelegate {
     
     func keyboardWillHide( notificaton: NSNotification ) {
         navigationItem.rightBarButtonItem?.title = "Edit"
+    }
+}
+
+// MARK: - Extension of our VC for Delegate
+extension ToDoViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return ( section == 2 && baseArray[1].count > 0 ) ? 25 : 0
     }
 }
 
