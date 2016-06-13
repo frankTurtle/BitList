@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ToDoViewController: UIViewController {
+class ToDoViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -19,8 +19,6 @@ class ToDoViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        tableView.tableFooterView = UIView(frame: CGRectZero) //.. setup the footer value - default value is nil
     
         // create some toDo's
         let toDo1 = ToDoModel(title: "Study", favorited: false, completed: false, dueDate: NSDate(), reminder: nil, repeated: nil)
@@ -81,54 +79,9 @@ class ToDoViewController: UIViewController {
     }
 }
 
-// MARK: - Extension of our VC for Delegate
-extension ToDoViewController: UITableViewDelegate {
-    // Method to give a height for the footer
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10.0
-    }
-    
-    // Method to give a bit of a buffer
-    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
-    // Method to adjust the height based on section
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return ( section == 2 && baseArray[1].count > 0 ) ? 25 : 0
-    }
-    
-    // Method to setup the cell before its displayed
-    // ( think of it as viewWillLoad
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        cell.separatorInset = UIEdgeInsetsZero //... set the cell inset to be zero
-        cell.layoutMargins = UIEdgeInsetsZero //.... needed to adjust the inset
-    }
-    
-    // Method to adjust the view when it's in editing mode
-    // implemented to make it so the user can only delete by swiping
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        if( tableView.editing ){ //................... if we're currently editing then we dont want the delete icon
-            return UITableViewCellEditingStyle.None
-        }
-        return UITableViewCellEditingStyle.Delete
-    }
-    
-    // Method to change indenting behavior while editing
-    // implemented to return false
-    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return false
-    }
-}
-
-// MARK: - Extension of our VC for DataSource
+// MARK: - Extension of our VC
 // Practicing extending the class we wrote to use implement the data source
 extension ToDoViewController: UITableViewDataSource {
-    // Method to not allow editing fo the first section
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return ( indexPath.section == 0 ) ? false : true
-    }
-    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // FIRST SECTION
         if( indexPath.section == 0 ){
