@@ -104,6 +104,21 @@ extension ToDoViewController: UITableViewDelegate {
         cell.separatorInset = UIEdgeInsetsZero //... set the cell inset to be zero
         cell.layoutMargins = UIEdgeInsetsZero //.... needed to adjust the inset
     }
+    
+    // Method to adjust the view when it's in editing mode
+    // implemented to make it so the user can only delete by swiping
+    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+        if( tableView.editing ){ //................... if we're currently editing then we dont want the delete icon
+            return UITableViewCellEditingStyle.None
+        }
+        return UITableViewCellEditingStyle.Delete
+    }
+    
+    // Method to change indenting behavior while editing
+    // implemented to return false
+    func tableView(tableView: UITableView, shouldIndentWhileEditingRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
 }
 
 // MARK: - Extension of our VC for DataSource
