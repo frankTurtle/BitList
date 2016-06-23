@@ -114,11 +114,47 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="LsH-MN-LeO" id="e0r-Jr-ONb"/>
+                        <segue destination="ti6-WT-MT5" kind="show" identifier="toDoSegue" id="aAN-q1-5jV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137" y="388"/>
+        </scene>
+        <!--New To Do View Controller-->
+        <scene sceneID="kxW-T3-R4V">
+            <objects>
+                <viewController id="ti6-WT-MT5" customClass="NewToDoViewController" customModule="BitList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jCX-x7-wcs"/>
+                        <viewControllerLayoutGuide type="bottom" id="QJx-cN-i2U"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hGR-JG-HlS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n4d-Cs-coz">
+                                <rect key="frame" x="0.0" y="556" width="375" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Item" id="5xs-VR-JV7"/>
+                                    <barButtonItem title="Delete" style="plain" id="Y9u-M1-A1L"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="qZ3-rn-Kfh">
+                        <barButtonItem key="leftBarButtonItem" title="Complete" id="928-6w-79d"/>
+                        <barButtonItem key="rightBarButtonItem" title="Favorite" id="eFA-f7-pCW"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ytC-dG-rxv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1951" y="388"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6qv-2T-NTq">

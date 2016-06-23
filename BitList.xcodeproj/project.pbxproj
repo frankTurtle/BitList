@@ -16,6 +16,7 @@
 		981408B21D0CAACA00040BFB /* ToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981408B11D0CAACA00040BFB /* ToDoTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		981408B41D0CAAE600040BFB /* AddToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981408B31D0CAAE600040BFB /* AddToDoTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		981408B71D0CBDDF00040BFB /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981408B61D0CBDDF00040BFB /* ToDoModel.swift */; settings = {ASSET_TAGS = (); }; };
+		98FB94D31D1C5A06000F339A /* NewToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FB94D21D1C5A06000F339A /* NewToDoViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		981408B11D0CAACA00040BFB /* ToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewCell.swift; sourceTree = "<group>"; };
 		981408B31D0CAAE600040BFB /* AddToDoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoTableViewCell.swift; sourceTree = "<group>"; };
 		981408B61D0CBDDF00040BFB /* ToDoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
+		98FB94D21D1C5A06000F339A /* NewToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewToDoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				981408AE1D0CA9C900040BFB /* ToDoViewController.swift */,
 				981408B11D0CAACA00040BFB /* ToDoTableViewCell.swift */,
 				981408B31D0CAAE600040BFB /* AddToDoTableViewCell.swift */,
+				98FB94D21D1C5A06000F339A /* NewToDoViewController.swift */,
 			);
 			name = ToDoVC;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981408A21D0CA81C00040BFB /* BitList.xcdatamodeld in Sources */,
+				98FB94D31D1C5A06000F339A /* NewToDoViewController.swift in Sources */,
 				981408B41D0CAAE600040BFB /* AddToDoTableViewCell.swift in Sources */,
 				981408AF1D0CA9C900040BFB /* ToDoViewController.swift in Sources */,
 				9814089A1D0CA81C00040BFB /* AppDelegate.swift in Sources */,
