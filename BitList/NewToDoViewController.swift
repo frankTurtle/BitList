@@ -10,6 +10,8 @@ import UIKit
 
 class NewToDoViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,4 +34,12 @@ class NewToDoViewController: UIViewController {
     }
     */
 
+    @IBAction func completeBarButtonItemPressed(sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func favoriteBarButtonItemPressed(sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func deleteBarButtonItemPressed(sender: UIBarButtonItem) {
+    }
 }
